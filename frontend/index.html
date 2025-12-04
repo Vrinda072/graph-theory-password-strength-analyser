@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Password Graph Analyzer</title>
+  <style>
+    body { font-family: system-ui, Arial; padding: 24px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+    h1 { color: #2c3e50; }
+    .container { background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    input[type="text"] { 
+      padding: 10px; 
+      font-size: 16px; 
+      width: 300px; 
+      border: 1px solid #ddd; 
+      border-radius: 4px; 
+      margin-right: 10px;
+    }
+    button { 
+      padding: 10px 16px; 
+      font-size: 16px; 
+      background: #3498db; 
+      color: white; 
+      border: none; 
+      border-radius: 4px; 
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover { background: #2980b9; }
+    #result { margin-top: 20px; }
+    pre { 
+      background: #f4f4f4; 
+      padding: 15px; 
+      border-radius: 6px; 
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .score { 
+      font-size: 1.2em; 
+      font-weight: bold; 
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .very-weak { background-color: #ff6b6b; color: white; }
+    .weak { background-color: #ff9e7d; color: white; }
+    .moderate { background-color: #ffd166; color: #333; }
+    .strong { background-color: #06d6a0; color: white; }
+    .very-strong { background-color: #118ab2; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Graph Theory Password Strength Analyzer</h1>
+  <div class="container">
+    <p>Enter a password to analyze its strength based on graph theory metrics:</p>
+    <div>
+      <input id="pw" type="text" placeholder="Type your password here" />
+      <button id="go">Analyze</button>
+    </div>
+    
+    <div id="result">
+      <div id="score-display" class="score" style="display: none;">
+        <span id="rating-text"></span>
+        <span id="score-value"></span>
+      </div>
+      <pre id="out">Results will appear here...</pre>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
